@@ -1,0 +1,1 @@
+from models import Class, Course, Student, Teacher
