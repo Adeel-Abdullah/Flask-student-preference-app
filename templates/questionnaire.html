@@ -1,0 +1,38 @@
+{% extends 'layout/base.html' %}
+
+
+{% block content %}
+
+<h1 class="text-dark">Questionnaire</h1>
+<form method="POST">
+    {{ form.hidden_tag() }}
+
+    <div>
+        {{ printPlaceholder(form.student_id) }}
+    </div>
+
+    <div>
+        {{ printPlaceholder(form.Homeroom_teacher) }}
+    </div>
+
+    <div>
+        {{ printPlaceholder(form.Favourite_course) }}
+    </div>
+
+    <div>
+        {{ printPlaceholder(form.First_pref) }}
+    </div>
+
+    <div>
+        {{ printPlaceholder(form.Second_pref) }}
+    </div>
+
+    <div>
+        {{ printPlaceholder(form.Third_pref) }}
+    </div>
+
+
+    {{ form.submit(class_="btn  btn-primary mt-4") }}
+</form>
+
+{% endblock content %}

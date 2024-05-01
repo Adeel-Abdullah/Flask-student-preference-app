@@ -1,0 +1,28 @@
+{% extends 'layout/base.html' %}
+
+
+{% block content %}
+
+<h1 class="text-dark">Welcome to the First Grade Preference Analyzer</h1>
+<section class="text-dark">
+    <h2>About the Project</h2>
+    <p>At [School Name], we believe in understanding and nurturing the unique preferences and dynamics of our first-grade students. Our web application, the First Grade Preference Analyzer, is designed to provide valuable insights into the social interactions and academic preferences of our young learners.</p>
+</section>
+<section class="text-dark">
+    <h2>Features</h2>
+    <ul>
+      <li><strong>Questionnaire Page:</strong> Students can submit their preferences, including their favorite course and preferred play/work partners.</li>
+      <li><strong>Summary Page:</strong> Gain insights into student pairs with mutual preferences, top 3 most popular students within each class, and a list of courses sorted by popularity.</li>
+    </ul>
+  </section>
+<section class="text-dark">
+    <h2>Get Started</h2>
+    <p>Ready to explore the preferences of our first-grade students? Click on the links below to access the questionnaire page and the summary page. Join us in our mission to create an enriching educational experience for every student.</p>
+    <div class="d-flex flex-column mt-3">
+        <a class="btn btn-primary w-25 mt-3 mx-auto" href="/questionnaire" class="btn btn-primary mx-auto">Questionnaire Page</a>
+        <a class="btn btn-primary w-25 mt-3 mx-auto" href="/summary" class="btn btn-primary mx-auto">Summary Page</a>
+    </div>
+</section>
+
+
+{% endblock content %}
