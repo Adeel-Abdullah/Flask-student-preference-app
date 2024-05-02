@@ -41,8 +41,7 @@ def questionnaire():
         # Redirect to a success page or another route
         flash('Usage Entry Successful!', 'success')
         return redirect( url_for('questionnaire') )
-    #Pre-populate your form here:
-    # form.username.data = user_version.username
+    
     return render_template("questionnaire.html", form=form)
 
 @app.route('/summary')

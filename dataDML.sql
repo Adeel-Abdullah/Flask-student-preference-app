@@ -1,13 +1,16 @@
 -- Insert data into the course table
 INSERT INTO course (id, name) VALUES
 (1, 'Math'),
-(2, 'Science'),
-(3, 'History');
+(2, 'Language'),
+(3, 'Science'),
+(3, 'Art'),
+(3, 'Gym');
 
 -- Insert data into the teacher table
 INSERT INTO teacher (id, name) VALUES
 (1, 'Mr. Smith'),
 (2, 'Ms. Johnson');
+(3, 'Ms. Taylor');
 
 -- Insert data into the class table
 INSERT INTO class (id, name, teacher_id) VALUES
