@@ -1,0 +1,23 @@
+
+<div>
+<h1 class="mt-4 text-dark">Mutual Preferences</h1>
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Student1</th>
+                <th>Student2</th>
+                <th>Student1 preferred Course</th>
+                <th>Student2 preferred Course</th>
+            </tr>
+            {% for column in columns %}
+            <tr>
+                {% for c in column %}
+                <td>
+                    {{ c }}                     
+                </td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>

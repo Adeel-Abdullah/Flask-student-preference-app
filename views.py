@@ -2,6 +2,8 @@ from flask import flash, render_template, redirect, url_for
 from models import Class, Course, Student, Teacher
 from forms import questionnaireForm
 from app import app, db
+import sqlite3
+from sqlite3 import Error
 
 
 @app.route('/')
@@ -42,3 +44,30 @@ def questionnaire():
     #Pre-populate your form here:
     # form.username.data = user_version.username
     return render_template("questionnaire.html", form=form)
+
+@app.route('/summary')
+def summary():
+    results1 = execute_sql('insight.sql')
+    results2 = execute_sql('insight2.sql')
+    results3 = execute_sql('insight3.sql')
+
+    return render_template("summary.html", columns=results1, columns2=results2, columns3=results3)
+
+
+def execute_sql(sql_filename):
+    db_filename = r"db.sqlite3"
+    # SQL DML script to Glean insights
+    try:
+        with open(sql_filename,'r') as dml_script:
+            dml = dml_script.read()
+        # Connect to SQLite database
+        with sqlite3.connect(db_filename) as db:
+        # Create a cursor object
+            cs = db.cursor()
+        # Execute SQL DML script to insert data
+            cs.execute(dml)
+            results = cs.fetchall()
+            return results
+    except Error as e:
+        print(e)
+        db.rollback()
