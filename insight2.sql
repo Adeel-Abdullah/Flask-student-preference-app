@@ -1,10 +1,14 @@
-select id, sum(score) as score
-from
-(
-select partner_1_id as id, 1 as score from student
-union all
-select partner_2_id as id, 0.5 as score from student
-union all
-select partner_3_id as id, 0.25 as score from student
-)
-group by id; 
+SELECT student.name, class.name, score
+FROM (
+    SELECT id AS pk, SUM(score) AS score
+    FROM (
+        SELECT partner_1_id AS id, 1 AS score FROM student
+        UNION ALL
+        SELECT partner_2_id AS id, 0.5 AS score FROM student
+        UNION ALL
+        SELECT partner_3_id AS id, 0.25 AS score FROM student
+    ) AS sub
+    GROUP BY pk
+) AS subquery
+JOIN student ON subquery.pk = student.id
+JOIN class ON class.id = student.class_id;

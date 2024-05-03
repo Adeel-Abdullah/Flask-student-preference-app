@@ -1,12 +1,52 @@
 <div>
 <h1 class="mt-4 text-dark">Most Popular Students</h1>
+<h3 class="mt-4 text-dark">Class 1A</h1>
     <table class="table">
         <tbody>
             <tr>
-                <th>Student1</th>
-                <th>Student2</th>
+                <th>Student Name</th>
+                <th>Class</th>
+                <th>Popularity Score</th>
             </tr>
-            {% for column in columns2 %}
+            {% for column in resultA %}
+            <tr>
+                {% for c in column %}
+                <td>
+                    {{ c }}                     
+                </td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+<h3 class="mt-4 text-dark">Class 1B</h1>
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Student Name</th>
+                <th>Class</th>
+                <th>Popularity Score</th>
+            </tr>
+            {% for column in resultB %}
+            <tr>
+                {% for c in column %}
+                <td>
+                    {{ c }}                     
+                </td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+<h3 class="mt-4 text-dark">Class 1C</h1>
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Student Name</th>
+                <th>Class</th>
+                <th>Popularity Score</th>
+            </tr>
+            {% for column in resultC %}
             <tr>
                 {% for c in column %}
                 <td>

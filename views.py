@@ -49,8 +49,12 @@ def summary():
     results1 = execute_sql('insight.sql')
     results2 = execute_sql('insight2.sql')
     results3 = execute_sql('insight3.sql')
+    print(results2)
+    A = [x for x in results2 if x[1]=='1A' ]
+    B = [x for x in results2 if x[1]=='1B' ]
+    C = [x for x in results2 if x[1]=='1C' ]
 
-    return render_template("summary.html", columns=results1, columns2=results2, columns3=results3)
+    return render_template("summary.html", columns=results1, resultA=A, resultB=B, resultC=C, columns3=results3)
 
 
 def execute_sql(sql_filename):
