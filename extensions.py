@@ -1,6 +1,5 @@
 from sqlalchemy import MetaData
 from flask_sqlalchemy import SQLAlchemy
-from flask_migrate import Migrate
 
 metadata = MetaData(
     naming_convention={
@@ -13,4 +12,3 @@ metadata = MetaData(
 )
 
 db=SQLAlchemy(metadata=metadata)
-migrate = Migrate()

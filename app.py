@@ -1,5 +1,5 @@
 from flask import Flask
-from extensions import migrate, db
+from extensions import db
 import os
 
 basedir = os.path.abspath(os.path.dirname(__file__))
@@ -15,7 +15,6 @@ def create_app(config_class):
     app = Flask(__name__)
     app.config.from_mapping(config_class)
     db.init_app(app)
-    migrate.init_app(app, db)
     return app
 
 app = create_app(config)
